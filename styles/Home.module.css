@@ -1,116 +1,190 @@
 .container {
-  padding: 0 2rem;
+  height: 100vh;
+  background-color: var(--bg-color);
+
+  position: relative;
 }
 
 .main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.productInfoSection {
+  width: 600px;
+  padding: 30px;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.type,
+.description,
+.discounted {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--text-color-1);
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.productHeading {
+  font-family: 'DM Serif Display', serif;
+  font-size: 34px;
+  color: var(--text-color-2);
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
+.type {
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .description {
-  margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
+/* 
+.desktopImg {
+  width: 40px;
+  height: 60px;
+} */
 
-.grid {
+.priceWrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  padding-bottom: 20px;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
+.price {
+  margin-right: 20px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  color: var(--main-color);
+}
+
+.discounted {
+  text-decoration: line-through;
+}
+
+.cartBtn {
+  width: 100%;
+  background: var(--main-color);
+  color: #fff;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 15px;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.btnText {
+  margin-left: 10px;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.cartBtn span {
+  margin-left: 10px;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.cartBtn:hover {
+  background: var(--hover-main);
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+@media (max-width: 660px) {
+  .main {
+    width: 400px;
+    height: 92%;
     flex-direction: column;
+  }
+
+  .productInfoSection {
+    width: 400px;
+  }
+
+  .productHeading {
+    font-size: 28px;
+  }
+
+  .type,
+  .description,
+  .discounted {
+    font-size: 90%;
+  }
+
+  .price {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 440px) {
+  .main {
+    width: 280px;
+    height: 88%;
+  }
+
+  .productInfoSection {
+    width: 280px;
+    padding: 18px;
+    height: auto;
+  }
+
+  .productHeading {
+    font-size: 24px;
+  }
+
+  .type,
+  .description,
+  .discounted {
+    font-size: 85%;
+  }
+
+  .priceWrapper {
+    padding-bottom: 15px;
+  }
+
+  .price {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 310px) {
+  .main {
+    width: 240px;
+    height: 80%;
+  }
+
+  .productInfoSection {
+    width: 240px;
+  }
+
+  .productHeading {
+    font-size: 20px;
+  }
+
+  .type,
+  .description,
+  .discounted {
+    font-size: 75%;
+  }
+
+  .priceWrapper {
+    padding-bottom: 10px;
+  }
+
+  .price {
+    font-size: 22px;
+  }
+
+  .cartBtn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
   }
 }
